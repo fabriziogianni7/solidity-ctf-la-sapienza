@@ -1,50 +1,37 @@
-# Remix IDE Blank Template
+# Smart Contract Security CTF – Base Sepolia
 
-Welcome to your new **Remix IDE Blank Workspace**!
+Welcome to the hands-on Capture the Flag portion of the "Dependable Distributed Systems" workshop!
 
-This workspace has been generated using the "Blank Template" option in Remix IDE. It starts with only minimal configuration files, giving you full control to build your project from scratch.
+You've just learned about the most common smart contract vulnerabilities.  
+Now it's time to exploit them live on **Base Sepolia** testnet.
 
----
+### Challenges
 
-## What's Included?
+1. **Vault** – Classic Reentrancy  
+   Address: `0x198bd919126Ef47D5fD48B7eD9AE69Caaf186a60`  
+   Goal: Drain the contract below 1 ETH to capture the flag (`solved = true`).
 
-- **`remix.config.json`**: Default Remix IDE workspace configuration.
-- **`.prettierrc.json`**: Basic Prettier formatting rules for code consistency.
+2. **ChangeOwner** – tx.origin Phishing  
+   Address: `0x02815e0077C2b2D1f236b75039552e01457c85Cd`  
+   Goal: Become owner and call `win()` by exploiting `tx.origin`.
 
-No contract files, folders, or sample code are included.
+3. **DonationChallenge** – Logic Flaw (Infinite Reward)  
+   Address: `0x4F2557700117852414f559468bbA409df1b47469`  
+   Goal: Drain all ETH from the contract.
 
----
+4. **Lottery** – Severe Logic Flaw (110% Payout)  
+   Address: `0x3390E6135A7d12A80d6B3CDaf702eC75dAFC77dd`  
+   Goal: Profit from buying tickets and drawing → drain the entire balance.
 
-## Getting Started
+### Rules & Tools
+- Use **Remix IDE** + MetaMask (connected to Base Sepolia).
+- Get free test ETH from Base Sepolia faucets.
+- Write attack contracts in Remix, deploy them, and interact with the challenge addresses.
+- First to set `solved = true` (or drain fully) wins bragging rights!
 
-1. **Create Files & Folders**
+### Tips
+- Read the source code carefully — the bugs are real-world patterns.
+- Think like an attacker: How would you abuse the intended logic?
+- Discuss with your neighbor — collaboration encouraged!
 
-   - Add new Solidity files, scripts, or folders as needed for your project.
-   - You can organize your workspace structure in any way you like.
-
-2. **Setup Project Settings** (Optional)
-
-   - Modify `remix.config.json` or add additional configuration files as your project grows.
-
-3. **Write & Compile Smart Contracts**
-
-   - Use the **Solidity Compiler** and **Deploy & Run Transactions** plugins (available in Remix IDE's left sidebar) to develop and test your contracts.
-
-4. **(Optional) Initialize Git**
-
-   - If you checked "Initialize as a Git repository" during workspace creation, you can start committing your code immediately.
-
----
-
-## Useful Resources
-
-- [Remix IDE Documentation](https://remix-ide.readthedocs.io/)
-- [Solidity Language Documentation](https://docs.soliditylang.org/)
-- [Remix IDE Community Forum](https://forum.remix.ethereum.org/)
-
----
-
-Happy coding! 🚀 
-
-_Remix IDE Team_
-
+Good luck, future whitehats! 🏴‍☠️
